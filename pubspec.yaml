@@ -1,5 +1,5 @@
 name: theme_setting
-description: "A Flutter package for managing theme settings, including dark mode persistence using HydratedCubit. It provides easy-to-use utilities for theme switching, JSON color conversion, and state management with Bloc."
+description: "A lightweight Flutter package for managing app themes and persistent dark mode using hydrated_bloc. Includes theme switching widget, JSON color utilities, and get_it integration."
 version: 0.0.2
 homepage: https://github.com/GenieCoderSrc/theme_setting
 repository: https://github.com/GenieCoderSrc/theme_setting
@@ -13,8 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  global:
-    path: ../global
+  get_it_di_global_variable: ^0.0.4
 
   flutter_bloc: ^9.0.0
   hydrated_bloc: ^10.0.0

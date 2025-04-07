@@ -2,14 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-# Changelog
-
 ## 0.0.2
-- Added support for dark mode toggle with state persistence using HydratedCubit.
-- Implemented `JsonColorUtil` for JSON color conversion.
-- Introduced `SupportedThemeName` enum with multiple theme options.
-- Provided a default example for integrating theme settings in a Flutter app.
-- Included `themeSettingGetItRegister()` for GetIt registration of theme-related dependencies.
+- ✅ Added `DarkModeHydratedCubit` for persistent dark mode management.
+- ✅ Integrated with `hydrated_bloc` for automatic state restoration.
+- ✅ Provided `ThemeSwitchDarkModeHydratedCubitImpl` widget for UI toggle.
+- ✅ Included JSON color utility class `JsonColorUtil`.
+- ✅ Support for custom `SupportedThemeName` enum.
+- ✅ Exported useful BLoC files for external use.
+- ✅ Added `get_it` registration function for dependency injection convenience.
+
+This release establishes the foundation for future theme management features.
+
 
 ## 0.0.1
-- Initial Release
+### 🎉 Initial Release
+

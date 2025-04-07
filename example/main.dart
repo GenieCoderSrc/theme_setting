@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:get_it_di_global_variable/get_it_di.dart';
+import 'package:theme_setting/config/di/theme_setting_get_it_register.dart';
 import 'package:theme_setting/theme_setting.dart';
+import 'package:theme_setting/views/widgets/theme_switch_hydrated_cubit_impl.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final storage = await HydratedStorage.build(
-    storageDirectory: await getApplicationDocumentsDirectory(),
-  );
-  HydratedBloc.storage = storage;
+void main() {
+  // Register the cubit
+  themeSettingGetItRegister();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => DarkModeHydratedCubit(),
+      create: (_) => sl<DarkModeHydratedCubit>(),
       child: BlocBuilder<DarkModeHydratedCubit, bool>(
-        builder: (context, isDarkMode) {
+        builder: (context, isDark) {
           return MaterialApp(
-            theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
-            home: ThemeSettingScreen(),
+            debugShowCheckedModeBanner: false,
+            title: 'Theme Setting Example',
+            theme: isDark ? ThemeData.dark() : ThemeData.light(),
+            home: const SettingsPage(),
           );
         },
       ),
@@ -31,33 +33,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ThemeSettingScreen extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Theme Setting Example')),
-      body: Center(
-        child: ThemeSwitchDarkMode(),
+      appBar: AppBar(
+        title: const Text('Theme Setting Example'),
       ),
-    );
-  }
-}
-
-class ThemeSwitchDarkMode extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(Icons.dark_mode_outlined),
-      title: Text('Dark Mode'),
-      trailing: BlocBuilder<DarkModeHydratedCubit, bool>(
-        builder: (context, darkModeState) {
-          return Switch(
-            value: darkModeState,
-            onChanged: (bool isDark) {
-              context.read<DarkModeHydratedCubit>().toggleDarkMode(isDark: isDark);
-            },
-          );
-        },
+      body: const Center(
+        child: ThemeSwitchDarkModeHydratedCubitImpl(),
       ),
     );
   }

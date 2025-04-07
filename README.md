@@ -1,28 +1,35 @@
-# Theme Setting
+# theme_setting
 
-A Flutter package for managing theme settings, including dark mode persistence using HydratedCubit. This package simplifies theme management with Bloc and HydratedBloc, ensuring user preferences are retained across app sessions.
+A lightweight and customizable Flutter package for managing app themes and dark mode, featuring persistent state management using `hydrated_bloc`. It provides a dark mode toggle widget, theme enum support, and JSON color utilities.
 
-## Features
-- Dark mode toggle with state persistence.
-- Support for multiple theme colors.
-- Utility functions for JSON color conversion.
+---
 
-## Installation
+## ✨ Features
+
+- Toggle dark mode with state persistence
+- Hydrated BLoC integration
+- Singleton-based color conversion utility
+- `get_it` integration for dependency injection
+- Easy-to-use widget for theme switching
+
+---
+
+## 🚀 Getting Started
+
+### Installation
+
 Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  theme_setting: latest_version
+  theme_setting: ^0.0.1
 ```
 
-Then run:
-```sh
-flutter pub get
-```
+---
 
-## Usage
+## 🔧 Usage
 
-### Registering Theme Cubit with GetIt
+### 1. Register the Theme Cubit
 
 ```dart
 import 'package:global/get_it_di.dart';
@@ -33,35 +40,38 @@ void themeSettingGetItRegister() {
 }
 ```
 
-### Theme Toggle Implementation
+### 2. Use the Theme Switch Widget
 
 ```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:theme_setting/view_models/dark_mode_hydrated_cubit/dark_mode_hydrated_cubit.dart';
+import 'package:theme_setting/theme_setting.dart';
 
-class ThemeSwitchDarkMode extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.dark_mode_outlined),
-      title: Text('Dark Mode'),
-      trailing: BlocBuilder<DarkModeHydratedCubit, bool>(
-        builder: (context, darkModeState) {
-          return Switch(
-            value: darkModeState,
-            onChanged: (bool isDark) {
-              context.read<DarkModeHydratedCubit>().toggleDarkMode(isDark: isDark);
-            },
-          );
-        },
-      ),
+    return Scaffold(
+      body: ThemeSwitchDarkModeHydratedCubitImpl(),
     );
   }
 }
 ```
 
-### Supported Themes
+### 3. Apply Theme Based on Cubit State
+
+```dart
+BlocBuilder<DarkModeHydratedCubit, bool>(
+  builder: (context, isDark) {
+    return MaterialApp(
+      theme: isDark ? ThemeData.dark() : ThemeData.light(),
+      home: MyHomePage(),
+    );
+  },
+);
+```
+
+---
+
+## 🌈 Supported Themes
+
 ```dart
 enum SupportedThemeName {
   primary,
@@ -72,19 +82,37 @@ enum SupportedThemeName {
 }
 ```
 
-### JSON Color Utility
+You can expand on this enum to support custom themes in your app.
+
+---
+
+## 🔄 Color JSON Utility
+
 ```dart
-import 'package:flutter/material.dart';
-
-class JsonColorUtil {
-  static Color convertJsonToColor(Map<String, dynamic> json) =>
-      json['color'] as Color? ?? Colors.black;
-
-  static Map<String, dynamic> convertColorToJson(Color? color) =>
-      {'color': color ?? Colors.black};
-}
+final colorJson = JsonColorUtil.convertColorToJson(Colors.blue);
+final color = JsonColorUtil.convertJsonToColor(colorJson);
 ```
 
-## License
-This package is released under the MIT License.
+---
+
+## 📦 Exports
+
+```dart
+export 'theme_bloc.dart';
+export 'theme_event.dart';
+export 'theme_state.dart';
+export 'package:theme_setting/view_models/dark_mode_hydrated_cubit/dark_mode_hydrated_cubit.dart';
+```
+
+---
+
+## 📢 Contributions
+
+Contributions and issues are welcome! Feel free to fork the repository and make pull requests.
+
+---
+
+## 📚 License
+
+MIT License. See [LICENSE](LICENSE) for details.
 
