@@ -2,11 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.0.3
-- update theme_switch_cubit_impl file.
+## 0.0.5
+- ✅ Added BrightnessExtension For `Light/Dark` mode checker.
+
+## 0.0.4
+- ✅ Rename ThemeSwitchDarkModeHydratedCubitImpl to ThemeSwitchToggleButton.
+
 ## 0.0.3
 - ✅ Provided `ThemeSwitchDarkModeHydratedCubitImpl` widget for UI toggle.
-
 
 ## 0.0.2
 - ✅ Added `DarkModeHydratedCubit` for persistent dark mode management.
