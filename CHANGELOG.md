@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.0.3
+- update theme_switch_cubit_impl file.
+## 0.0.3
 - ✅ Provided `ThemeSwitchDarkModeHydratedCubitImpl` widget for UI toggle.
 
 
