@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.6
+- ✅ Added Register Theme Setting Bloc Provider.
+
 ## 0.0.5
 - ✅ Added BrightnessExtension For `Light/Dark` mode checker.
 
