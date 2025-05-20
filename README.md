@@ -22,7 +22,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  theme_setting: ^0.0.6
+  theme_setting: ^0.0.7
 ```
 
 ---

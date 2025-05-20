@@ -7,17 +7,17 @@ import 'package:theme_setting/view_models/dark_mode_hydrated_cubit/dark_mode_hyd
 // ---- Theme Setting bloc provider ------
 late DarkModeHydratedCubit _darkModeHydratedCubit;
 
-initLocationBlocProvider() {
+initThemeSettingBlocProvider() {
   // ---- Theme Setting Cubit Init ------
   _darkModeHydratedCubit = sl<DarkModeHydratedCubit>();
 }
 
-disposeLocationBlocProvider() {
+disposeThemeSettingBlocProvider() {
   // ---- Theme Setting Cubit Dispose ------
   _darkModeHydratedCubit.close();
 }
 
-List<SingleChildWidget> locationBlocProviders = [
+List<SingleChildWidget> themeSettingBlocProviders = [
   // ---- Theme Setting Cubit Bloc Provider ------
   BlocProvider<DarkModeHydratedCubit>(create: (BuildContext context) => _darkModeHydratedCubit),
 ];
