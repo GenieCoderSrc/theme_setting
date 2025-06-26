@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.8 
+
+### Jun 27, 2025
+
+### Added
+- ✅ AppThemeBuilder to apply theme brightness via BlocBuilder.
+
+### Removed
+- ✅ Removed `supportedThemeName` enum.
+
 ## 0.0.7+1
+
+### Jun 27, 2025
+
+### Changed
 - ✅ Used `BlocProvider.value` to Register `DarkModeHydratedCubit` in the Bloc Provider.
 - ✅ Renamed di to dependency_injection
 
