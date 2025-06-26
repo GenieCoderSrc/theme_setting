@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.7+1
+- ✅ Used `BlocProvider.value` to Register `DarkModeHydratedCubit` in the Bloc Provider.
+- ✅ Renamed di to dependency_injection
+
 ## 0.0.7
 - ✅ Update Register Theme Setting Bloc Provider.
 

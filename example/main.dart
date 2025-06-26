@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_di_global_variable/get_it_di.dart';
-import 'package:theme_setting/config/di/theme_setting_get_it_register.dart';
 import 'package:theme_setting/theme_setting.dart';
-import 'package:theme_setting/views/widgets/theme_switch_toggle_button.dart';
 
 void main() {
-  // Register the cubit
+  // Register the GetIt DI
   themeSettingGetItRegister();
 
   runApp(const MyApp());
