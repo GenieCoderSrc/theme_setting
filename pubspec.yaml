@@ -13,7 +13,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get_it_di_global_variable: ^0.0.4
+
+
+  get_it_di_global_variable:
+    path: ../get_it_di_global_variable
 
   flutter_bloc: ^9.0.0
   hydrated_bloc: ^10.0.0
