@@ -37,12 +37,8 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Theme Setting Example'),
-      ),
-      body: const Center(
-        child: ThemeSwitchToggleButton(),
-      ),
+      appBar: AppBar(title: const Text('Theme Setting Example')),
+      body: const Center(child: ThemeSwitchToggleButton()),
     );
   }
 }
