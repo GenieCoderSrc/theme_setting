@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.9
+
+### Aug 11, 2025
+
+### Removed
+- ✅ Removed `build_runner` `json_serializable` dependency
+
 ## 0.0.8 
 
 ### Jun 27, 2025
