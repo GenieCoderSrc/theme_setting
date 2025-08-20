@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.1.0
+
+### Aug 22, 2025
+
+### ✨ Updated
+
+- Updated provider version as provider: ^6.1.5+1 
+- Updated `get_it_di_global_variable` to 0.0.6
+- Updated Dart sdk to 3.9.0
+- Removed `flutter_lints` Dependency
+
+
+
 ## 0.0.9
 
 ### Aug 11, 2025
