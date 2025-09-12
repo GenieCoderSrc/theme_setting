@@ -49,7 +49,7 @@ class ThemeSwitchToggleButton extends StatelessWidget {
           ),
           trailing: Switch(
             activeThumbColor: activeThumbColor,
-            inactiveThumbColor: inactiveThumbColor ,
+            inactiveThumbColor: inactiveThumbColor,
             value: darkModeState,
             onChanged: (bool isDark) {
               context.read<DarkModeHydratedCubit>().toggleDarkMode(
