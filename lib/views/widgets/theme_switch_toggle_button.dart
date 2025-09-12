@@ -7,6 +7,9 @@ class ThemeSwitchToggleButton extends StatelessWidget {
   final IconData? disabledIcon;
   final Color? enabledIconColor;
   final Color? disabledIconColor;
+  final Color? labelColor;
+  final Color? activeThumbColor;
+  final Color? inactiveThumbColor;
   final void Function(bool isDark)? onToggle;
 
   const ThemeSwitchToggleButton({
@@ -16,6 +19,9 @@ class ThemeSwitchToggleButton extends StatelessWidget {
     this.enabledIconColor,
     this.disabledIconColor,
     this.onToggle,
+    this.labelColor,
+    this.activeThumbColor,
+    this.inactiveThumbColor,
   });
 
   @override
@@ -37,11 +43,13 @@ class ThemeSwitchToggleButton extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 14.0,
-              color: Colors.blueGrey[600],
+              color: labelColor ?? Colors.blueGrey[600],
               fontWeight: FontWeight.w600,
             ),
           ),
           trailing: Switch(
+            activeThumbColor: activeThumbColor,
+            inactiveThumbColor: inactiveThumbColor ,
             value: darkModeState,
             onChanged: (bool isDark) {
               context.read<DarkModeHydratedCubit>().toggleDarkMode(
