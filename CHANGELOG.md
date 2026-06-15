@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+
+
 ## 0.1.1
 
 ### Sep 12, 2025
@@ -84,4 +86,3 @@ This release establishes the foundation for future theme management features.
 ## 0.0.1
 
 ### 🎉 Initial Release
-
