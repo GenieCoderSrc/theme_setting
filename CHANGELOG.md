@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.1.2
 
+### Jun 20, 2026
+
+### ✨ Updated
+
+- Updated `get_it_di_global_variable` to 0.0.8
 
 ## 0.1.1
 
