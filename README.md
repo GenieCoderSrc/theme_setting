@@ -22,6 +22,8 @@ A lightweight and customizable Flutter package for managing app themes and dark 
 Add this to your `pubspec.yaml`:
 
 ```yaml
+resolution: workspace
+
 dependencies:
   theme_setting: <latest_version>
 ```
