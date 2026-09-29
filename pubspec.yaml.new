@@ -1,0 +1,12 @@
+name: theme_setting
+description: "A lightweight Flutter package for managing app themes and persistent dark mode using hydrated_bloc. Includes theme switching widget, JSON color utilities, and get_it integration."
+version: 0.1.2
+homepage: https://github.com/GenieCoderSrc/theme_setting
+repository: https://github.com/GenieCoderSrc/theme_setting
+issue_tracker: https://github.com/GenieCoderSrc/theme_setting/issues
+
+
+environment:
+  sdk: \x27>=3.6.0 <4.0.0\x27
+  resolution: workspace
+    flutter: ">=3.0.0"
