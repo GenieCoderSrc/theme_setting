@@ -5,8 +5,8 @@ class JsonColorUtil {
       json['color'] as Color? ?? Colors.black;
 
   static Map<String, dynamic> convertColorToJson(Color? color) => {
-    'color': color ?? Colors.black,
-  };
+        'color': color ?? Colors.black,
+      };
 
   ///Singleton factory
   static final JsonColorUtil _instance = JsonColorUtil._internal();

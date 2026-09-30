@@ -53,8 +53,8 @@ class ThemeSwitchToggleButton extends StatelessWidget {
             value: darkModeState,
             onChanged: (bool isDark) {
               context.read<DarkModeHydratedCubit>().toggleDarkMode(
-                isDark: isDark,
-              );
+                    isDark: isDark,
+                  );
               onToggle?.call(isDark);
             },
           ),
